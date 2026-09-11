@@ -20,11 +20,11 @@ QuickPresetStore（DataStore Preferences）
 BackupManager（SAF JSON / UTF-8 BOM CSV）
 ```
 
-## 独立应用边界
+## 应用边界与升级标识
 
-- 正式 `namespace` 与 `applicationId` 均为 `com.xingchen.xiaochengkebu`。
+- `namespace` 为 `com.xingchen.xiaochengkebu`；为兼容 `xiaocheng-kebu-1.0.0`，发布包 `applicationId` 保持为 `com.example.deviceasset`。
 - `App` 只创建 `CourseContainer`，其中包含 `TeachingDatabase`、`TeachingRepository`、`QuickPresetStore` 和 `BackupManager`。
-- 数据库文件名为 `xiaocheng_kebu.db`；Room schema version 为 2，通过 `MIGRATION_1_2` 从 1.0.1 原地升级，不使用破坏性迁移；不包含旧设备资产数据库或其它工程依赖。
+- 数据库文件名为 `xiaocheng_kebu.db`；Room schema version 为 2，通过 `MIGRATION_1_2` 从 1.0.0/v1 原地升级，不使用破坏性迁移；不删除可能存在的其它数据库文件。
 
 ## 数据边界
 

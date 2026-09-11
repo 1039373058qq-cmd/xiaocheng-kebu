@@ -25,4 +25,4 @@ Debug APK 输出到 `app/build/outputs/apk/debug/app-debug.apk`。
 - `docs/PRODUCT_SPEC.md`、`docs/DESIGN_SPEC.md`：产品与视觉约束
 - `docs/DEVELOPMENT_WORKFLOW.md`：实现阶段和审核记录
 
-课时数据使用独立数据库 `xiaocheng_kebu.db`。正式 namespace/applicationId 均为 `com.xingchen.xiaochengkebu`，不会覆盖旧版“小尘记账”（历史包名 `com.example.deviceasset`）。当前版本为 `1.0.2`。从 1.0.1 升级时通过 Room `MIGRATION_1_2` 原地保留记录和学期数据。
+课时数据使用独立数据库 `xiaocheng_kebu.db`。为兼容 `xiaocheng-kebu-1.0.0`，当前发布包的 `applicationId` 保持为 `com.example.deviceasset`，版本为 `1.0.3`（versionCode 11），可覆盖安装并通过 Room `MIGRATION_1_2` 原地保留记录和学期数据。
