@@ -25,3 +25,6 @@ design/
 *.zip
 *.png
 !app/src/main/res/**/*.png
+
+# Legacy local knowledge-pack artifacts, not used by XiaoChen Kebu
+app/src/main/assets/knowledge-packs/
