@@ -1,5 +1,6 @@
 # Gradle and Android Studio generated files
 .gradle/
+.kotlin/
 build/
 app/build/
 .idea/
