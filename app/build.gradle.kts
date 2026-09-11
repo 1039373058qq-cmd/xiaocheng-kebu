@@ -10,11 +10,12 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.deviceasset"
+        // Keep this app installable alongside the legacy 小尘记账 package.
+        applicationId = "com.xingchen.xiaochengkebu"
         minSdk = 29
         targetSdk = 35
-        versionCode = 8
-        versionName = "1.0.0"
+        versionCode = 9
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {

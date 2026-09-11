@@ -25,4 +25,4 @@ Debug APK 输出到 `app/build/outputs/apk/debug/app-debug.apk`。
 - `docs/PRODUCT_SPEC.md`、`docs/DESIGN_SPEC.md`：产品与视觉约束
 - `docs/DEVELOPMENT_WORKFLOW.md`：实现阶段和审核记录
 
-应用包名暂保持 `com.example.deviceasset` 以支持覆盖安装，课时数据使用独立数据库 `xiaocheng_kebu.db`。
+课时数据使用独立数据库 `xiaocheng_kebu.db`。源码 namespace 仍为 `com.example.deviceasset` 以减少迁移风险，但应用安装标识已切换为 `com.xingchen.xiaochengkebu`，不会覆盖旧版“小尘记账”（`com.example.deviceasset`）。当前版本为 `1.0.1`。

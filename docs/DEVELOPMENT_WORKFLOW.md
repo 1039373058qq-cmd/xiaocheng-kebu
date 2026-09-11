@@ -28,7 +28,7 @@
 Debug/Release 编译                     ✅
 Debug/Release 单元测试                 ✅
 Lint                                    ✅
-aapt dump badging                      ✅ versionName=1.0.0 / label=小尘课簿
+aapt dump badging                      ✅ versionName=1.0.1 / label=小尘课簿 / applicationId=com.xingchen.xiaochengkebu
 ```
 
 当前开发环境没有连接 Android 真机或模拟器，因此没有执行启动截图级验证；构建出的 Debug APK 可直接安装。
