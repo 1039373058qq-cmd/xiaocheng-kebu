@@ -7,7 +7,7 @@
         android:name=".App"
         android:roundIcon="@mipmap/ink_wash_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.DeviceAsset">
+        android:theme="@style/Theme.XiaoChenKebu">
         <activity
             android:name=".MainActivity"
             android:exported="true">

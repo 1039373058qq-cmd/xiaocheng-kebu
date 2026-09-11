@@ -18,11 +18,11 @@ Debug APK 输出到 `app/build/outputs/apk/debug/app-debug.apk`。
 
 ## 代码入口
 
-- `app/src/main/java/com/example/deviceasset/course/navigation`：一级导航
-- `app/src/main/java/com/example/deviceasset/course/ui`：日历、统计、设置页面
-- `app/src/main/java/com/example/deviceasset/course/data`：Room、Repository、DataStore、备份
+- `app/src/main/java/com/xingchen/xiaochengkebu/course/navigation`：一级导航
+- `app/src/main/java/com/xingchen/xiaochengkebu/course/ui`：日历、统计、设置页面
+- `app/src/main/java/com/xingchen/xiaochengkebu/course/data`：Room、Repository、DataStore、备份
 - `docs/ARCHITECTURE.md`：分层和数据边界
 - `docs/PRODUCT_SPEC.md`、`docs/DESIGN_SPEC.md`：产品与视觉约束
 - `docs/DEVELOPMENT_WORKFLOW.md`：实现阶段和审核记录
 
-课时数据使用独立数据库 `xiaocheng_kebu.db`。源码 namespace 仍为 `com.example.deviceasset` 以减少迁移风险，但应用安装标识已切换为 `com.xingchen.xiaochengkebu`，不会覆盖旧版“小尘记账”（`com.example.deviceasset`）。当前版本为 `1.0.1`。
+课时数据使用独立数据库 `xiaochen_kebu.db`。正式 namespace/applicationId 均为 `com.xingchen.xiaochengkebu`，不会覆盖旧版“小尘记账”（历史包名 `com.example.deviceasset`）。当前版本为 `1.0.1`。

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.deviceasset"
+    namespace = "com.xingchen.xiaochengkebu"
     compileSdk = 35
 
     defaultConfig {
@@ -44,6 +44,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     packaging {

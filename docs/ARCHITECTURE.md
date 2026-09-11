@@ -20,6 +20,12 @@ QuickPresetStore（DataStore Preferences）
 BackupManager（SAF JSON / UTF-8 BOM CSV）
 ```
 
+## 独立应用边界
+
+- 正式 `namespace` 与 `applicationId` 均为 `com.xingchen.xiaochengkebu`。
+- `App` 只创建 `CourseContainer`，其中包含 `TeachingDatabase`、`TeachingRepository`、`QuickPresetStore` 和 `BackupManager`。
+- 数据库文件名为 `xiaochen_kebu.db`；不包含旧设备资产数据库或其它工程依赖。
+
 ## 数据边界
 
 - `TeachingRecord` 以 `dateEpochDay` 为主键，一天一条记录，保存授课、晚辅和备注。
@@ -29,7 +35,7 @@ BackupManager（SAF JSON / UTF-8 BOM CSV）
 
 ## 导入安全
 
-导入流程先在内存中解析并校验 `schemaVersion`、日期范围和非负计数，再由设置页选择合并或覆盖。覆盖操作经过二次确认，并在 Room `withTransaction` 中清空和写入；解析失败或写入失败时不会留下半套数据。
+导入流程先在内存中解析并校验 `schemaVersion`、日期范围、非负计数、重复日期和重复学期，再由设置页选择合并或覆盖。学期以 `name + startEpochDay + endEpochDay` 去重，当前学期写入、合并和覆盖都在 Room `withTransaction` 中完成；解析失败或写入失败时不会留下半套数据。JSON/CSV 文件读写统一运行在 `Dispatchers.IO`。
 
 ## 包结构
 
@@ -37,4 +43,4 @@ BackupManager（SAF JSON / UTF-8 BOM CSV）
 
 ## 运行约束
 
-应用默认启动日历，完全离线且不申请网络或传统外部存储权限。宣纸、水墨和印章资源通过现有 drawable/mipmap 复用；标题使用衬线字体，正文使用 Sans Serif。
+应用默认启动日历，完全离线且不申请网络或传统外部存储权限。仅保留课簿所需的宣纸、水墨和印章资源；标题使用衬线字体，正文使用 Sans Serif。版本展示读取 `BuildConfig.VERSION_NAME`，不在 UI 中硬编码。
