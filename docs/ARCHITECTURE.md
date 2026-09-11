@@ -1,4 +1,4 @@
-# 小尘课簿架构（V1）
+# 小尘课簿架构（V2）
 
 ## 分层
 
@@ -24,7 +24,7 @@ BackupManager（SAF JSON / UTF-8 BOM CSV）
 
 - 正式 `namespace` 与 `applicationId` 均为 `com.xingchen.xiaochengkebu`。
 - `App` 只创建 `CourseContainer`，其中包含 `TeachingDatabase`、`TeachingRepository`、`QuickPresetStore` 和 `BackupManager`。
-- 数据库文件名为 `xiaochen_kebu.db`；不包含旧设备资产数据库或其它工程依赖。
+- 数据库文件名为 `xiaocheng_kebu.db`；Room schema version 为 2，通过 `MIGRATION_1_2` 从 1.0.1 原地升级，不使用破坏性迁移；不包含旧设备资产数据库或其它工程依赖。
 
 ## 数据边界
 

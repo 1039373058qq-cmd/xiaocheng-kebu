@@ -20,7 +20,7 @@
 - 删除旧 DeviceAsset 的数据库、Repository、领域模型、设备列表/编辑/详情/使用助手页面及对应测试；只保留课簿的日历、统计、设置和数据层。
 - 删除全部 `device_*.png`；保留并压缩课簿所需的启动图标、宣纸背景和水墨卡片纹理。
 - 将旧 `cardiology-*` knowledge pack 移出 `app/src/main/assets`，因此 Android source set 和 APK 均不再包含 `knowledge-packs` 或 Ultrasound Workbench 资源。
-- Room schema 只保留 `com.xingchen.xiaochengkebu.course.data.local.TeachingDatabase/1.json`。
+- 保留 `TeachingDatabase/1.json` 作为 1.0.1 历史 schema，并新增 v2 schema；`MIGRATION_1_2` 在建库时注册，恢复旧数据库文件名 `xiaocheng_kebu.db`，不使用破坏性迁移。
 
 ## 数据安全边界
 
@@ -36,9 +36,11 @@
 Debug/Release 编译                     ✅
 Debug/Release 单元测试                 ✅
 Lint                                    ✅
-aapt dump badging                      ✅ versionName=1.0.1 / label=小尘课簿 / applicationId=com.xingchen.xiaochengkebu
+aapt dump badging                      ✅ versionName=1.0.2 / versionCode=10 / label=小尘课簿 / applicationId=com.xingchen.xiaochengkebu
 ```
 
 Debug APK 清理前为 81,365,316 bytes（约 81.1 MB），清理后为 58,863,717 bytes（约 58.9 MB）；Release unsigned APK 为 44,539,399 bytes（约 44.5 MB）。APK 内容扫描确认不存在 `device_*.png`、旧 Device 类、`device_asset.db`、`assets/knowledge-packs`、`cardiology-*` 或 `ultrasound-*`。
 
 当前开发环境没有连接 Android 真机或模拟器，因此没有执行启动截图级验证；构建出的 Debug APK 可直接安装。
+
+升级兼容验证：MigrationTestHelper 覆盖空库、课时记录原样保留、学期重复去重/current 归一化、唯一索引和 Room schema 校验；安装 1.0.2 时继续使用 `xiaocheng_kebu.db`，不会删除或自动迁移可能存在的 `xiaochen_kebu.db` 测试库。
