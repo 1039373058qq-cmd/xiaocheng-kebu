@@ -1,0 +1,27 @@
+# Gradle and Android Studio generated files
+.gradle/
+build/
+app/build/
+.idea/
+*.iml
+local.properties
+
+# Native build outputs
+*.cxx/
+.externalNativeBuild/
+
+# Local tooling and OS files
+.tools/
+.DS_Store
+
+# Other local workspaces and review artifacts in the parent directory
+.worktrees/
+Local-Codex-Bridge/
+dish-picker-android/
+macos-usage-assistant/
+ultrasound-workbench-android/
+design/
+*.apk
+*.zip
+*.png
+!app/src/main/res/**/*.png

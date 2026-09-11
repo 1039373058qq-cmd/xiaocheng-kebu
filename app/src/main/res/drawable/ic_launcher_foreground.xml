@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- A small ink-wash ledger: the mark stays recognizable at launcher size. -->
+    <path
+        android:fillColor="#263238"
+        android:pathData="M27,30 C35,25 45,24 53,27 C60,29 67,29 78,24 L78,72 C68,77 59,78 52,75 C44,72 36,73 27,78 Z" />
+    <path
+        android:fillColor="#F4F0E7"
+        android:pathData="M33,35 C40,32 46,32 52,34 L52,68 C45,65 39,65 33,68 Z" />
+    <path
+        android:fillColor="#D9E0D9"
+        android:pathData="M57,34 C63,35 69,34 73,32 L73,68 C67,70 62,70 57,68 Z" />
+    <path
+        android:fillColor="#637D72"
+        android:pathData="M31,83 C44,77 55,84 65,80 C74,77 80,70 85,59 C78,72 68,83 57,87 C47,91 38,86 31,83 Z" />
+    <path
+        android:fillColor="#B5664B"
+        android:pathData="M75,24 L86,24 L86,35 L75,35 Z" />
+    <path
+        android:fillColor="#F4F0E7"
+        android:pathData="M78,27 L83,27 L83,32 L78,32 Z" />
+</vector>
